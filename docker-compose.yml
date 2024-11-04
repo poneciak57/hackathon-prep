@@ -16,7 +16,7 @@ services:
   web:
     build:
       context: ./
-    command: sh -c ./run_somehow.sh
+    command: sh -c /app/run_somehow.sh
     volumes:
       - ./:/app
     ports:
