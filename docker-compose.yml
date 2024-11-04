@@ -1,3 +1,4 @@
+# DO NOT CHANGE ANYTHING
 version: '3'
 
 services:
@@ -15,7 +16,7 @@ services:
   web:
     build:
       context: ./
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c ./run_somehow.sh
     volumes:
       - ./:/app
     ports:
