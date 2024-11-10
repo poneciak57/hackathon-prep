@@ -14,6 +14,7 @@ it runs in dev mode
     ```
     * Inside of Django bash
         ```bash
+        python manage.py shell
         python manage.py makemigrations --empty todo
         python manage.py createsuperuser
         python manage.py changepassword
