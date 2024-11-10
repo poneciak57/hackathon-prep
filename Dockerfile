@@ -15,8 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN chmod +x /app/run_somehow.sh
+RUN sed -i 's/\r$//' /app/run_somehow.sh
 # Ustawiamy zmienną środowiskową dla Django
 # ENV PYTHONUNBUFFERED=1
 
 # Komenda startowa dla Django
-CMD ["sh", "-c", "./run_somehow.sh"]
+CMD ["sh", "-c", "/app/run_somehow.sh"]

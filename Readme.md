@@ -11,3 +11,6 @@ it runs in dev mode
 ```
 psql -U myuser -d mydatabase
 ```
+```
+python manage.py makemigrations --empty todo
+```
