@@ -1,4 +1,3 @@
-<!-- post_list.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,6 +67,23 @@
             color: #777;
             margin-top: 5px;
         }
+
+        /* Add post button styling */
+        .add-post-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-post-btn:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
@@ -80,5 +96,8 @@
             </li>
         {% endfor %}
     </ul>
+
+    <!-- Button to add a new post -->
+    <a href="{% url 'add_post' %}" class="add-post-btn">Add a New Post</a>
 </body>
 </html>
