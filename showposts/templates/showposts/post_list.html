@@ -1,0 +1,84 @@
+<!-- post_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Post list styling */
+        .post-list {
+            list-style-type: none;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .post-item {
+            background-color: #ffffff;
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .post-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-title {
+            font-size: 1.25em;
+            color: #007acc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .post-title:hover {
+            text-decoration: underline;
+        }
+
+        .post-date {
+            font-size: 0.875em;
+            color: #777;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Posts</h1>
+    <ul class="post-list">
+        {% for post in posts %}
+            <li class="post-item">
+                <a href="{% url 'post_content' post.pk %}" class="post-title">{{ post.title }}</a>
+                <p class="post-date">Published on: {{ post.published_at }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
