@@ -7,16 +7,37 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #66757F; /* Ciemniejsze szare tło */
         }
         .form-control:focus, .btn:focus {
-            box-shadow: 0 0 3px rgba(0, 123, 255, 0.3);
-            border-color: rgba(0, 123, 255, 0.3);
+            box-shadow: 0 0 3px rgba(85, 172, 238, 0.3); /* Zmieniono na #55ACEE */
+            border-color: rgba(85, 172, 238, 0.3); /* Zmieniono na #55ACEE */
+            background-color: #CCD6DD;
         }
         .form-control, .btn {
             transition: transform 0.2s;
+            border-radius: 0.25rem; /* Delikatnie zaokrąglone rogi */
         }
         .form-control:hover, .btn:hover {
             transform: scale(1.05);
+        }
+        h1 {
+            color: #55ACEE; /* Zmieniono na #55ACEE */
+            font-weight: bold; /* Pogrubiony tytuł */
+        }
+        .btn-primary {
+            background-color: #55ACEE;
+            border-color: #55ACEE;
+        }
+        .btn-danger {
+            background-color: #292F33;
+            border-color: #292F33;
+        }
+        .list-group-item {
+            background-color: #CCD6DD; /* Zmieniono na #CCD6DD */
+        }
+        .form-control {
+            background-color: #CCD6DD; /* Kolor pola tekstowego */
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -25,7 +46,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="mt-5">To-Do List</h1>
+        <h1 class="mt-5">ToDo List</h1>
         <form method="post" action="{% url 'add_todo' %}" class="form-inline my-4">
             {% csrf_token %}
             <input type="text" name="title" class="form-control mr-2" placeholder="Enter a new task">
